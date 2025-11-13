@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Meu Comparador de Cotações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📊 Comparador de Cotações</h1>
+            <p>Tire foto e compare preços</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Botão principal para foto -->
+            <div class="upload-section">
+                <input type="file" id="imageInput" accept="image/*" capture="environment" style="display: none;">
+                <button class="btn-photo" onclick="document.getElementById('imageInput').click()">
+                    📸 Fotografar Cotação
+                </button>
+                <p class="help">Tire uma foto da cotação em papel ou na tela</p>
+            </div>
+
+            <!-- Área de entrada manual -->
+            <div class="manual-section">
+                <h3>✏️ Ou digite manualmente:</h3>
+                <div class="form-group">
+                    <input type="text" id="fornecedor" placeholder="Nome do fornecedor">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="preco" placeholder="Preço (ex: 1500.50)" step="0.01">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="prazo" placeholder="Prazo em dias (ex: 30)">
+                </div>
+                <button class="btn-add" onclick="adicionarCotacao()">➕ Adicionar</button>
+            </div>
+
+            <!-- Área de resultados -->
+            <div id="resultados" class="resultados" style="display: none;">
+                <h3>🏆 Comparação:</h3>
+                <div id="lista-cotacoes"></div>
+                <button class="btn-nova" onclick="novaComparacao()">🔄 Nova Comparação</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
